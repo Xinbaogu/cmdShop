@@ -41,11 +41,18 @@ public class Test {
             ReadProductExcel readProductExcel = new ReadProductExcel();//创建对象
             Product products[] = readProductExcel.readExcel(in);
 
+            System.out.println("");
+            System.out.print("\t");
+            System.out.println("欢迎来到慧慧子超市！");
+            System.out.print("商品编号");
+            System.out.print("\t商品名称");
+            System.out.print("\t商品价格");
+            System.out.println("\t商品数量");
             for (int j = 0; j < products.length; j++) {
                 System.out.print(products[j].getProductId());
                 System.out.print("\t"+products[j].getProductName());
-                System.out.print("\t"+products[j].getPrices());
-                System.out.println("\t"+products[j].getAmount());
+                System.out.print("\t\t"+products[j].getPrices());
+                System.out.println("\t\t"+products[j].getAmount());
             }
         }
     }

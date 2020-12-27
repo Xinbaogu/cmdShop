@@ -19,22 +19,22 @@ public class ReadCustomerExcel {
             customers = new Customer[xs.getLastRowNum()];
             for (int j = 1; j <= xs.getLastRowNum(); j++) {
                 XSSFRow row = xs.getRow(j);
-                Customer user = new Customer();//每循环一次就把电子表格的一行的数据给对象赋值
+                Customer customer = new Customer();//每循环一次就把电子表格的一行的数据给对象赋值
                 for (int k = 0; k <= row.getLastCellNum(); k++) {
                     XSSFCell cell = row.getCell(k);
                     if (cell == null)
                         continue;
                     if (k == 0) {
-                        user.setUsername(this.getValue(cell));//给username属性赋值
+                        customer.setUsername(this.getValue(cell));//给username属性赋值
                     } else if (k == 1) {
-                        user.setPassword(this.getValue(cell));//给password属性赋值
+                        customer.setPassword(this.getValue(cell));//给password属性赋值
                     } else if (k == 2) {
-                        user.setAddress(this.getValue(cell));//给address属性赋值
+                        customer.setAddress(this.getValue(cell));//给address属性赋值
                     } else if (k == 3) {
-                        user.setPhone(this.getValue(cell));//给phone属性赋值
+                        customer.setPhone(this.getValue(cell));//给phone属性赋值
                     }
                 }
-                customers[j-1] = user;
+                customers[j-1] = customer;
             }
 
         } catch (IOException e) {
